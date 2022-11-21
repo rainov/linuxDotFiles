@@ -58,19 +58,18 @@ case $desktop in
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
         MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config.ini &
-        polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config.ini &
       done
     else
     polybar --reload mainbar-bspwm -c ~/.config/polybar/config.ini &
     fi
     # second polybar at bottom
-    # if type "xrandr" > /dev/null; then
-    #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config &
-    #   done
-    # else
-    # polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config &
-    # fi
+    if type "xrandr" > /dev/null; then
+      for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config.ini &
+      done
+    else
+    polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config.ini &
+    fi
     
     ;;
 
