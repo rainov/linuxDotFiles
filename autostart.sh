@@ -16,7 +16,6 @@ function run {
 # xrandr --output DP-1-4 --mode 3440x1440 --primary --rate 144.00 && xrandr --output eDP-1 --auto --left-of DP-1-4
 xrandr --output DP-4 --mode 3440x1440 --primary --rate 144.00 && xrandr --output eDP-1-1 --auto --left-of DP-4
 
-
 $HOME/.config/polybar/launch.sh &
 
 #change your keyboard if you need it
@@ -57,8 +56,8 @@ picom --config $HOME/.config/bspwm/picom.conf &
 #/usr/lib/xfce4/notifyd/xfce4-notifyd &
 #run volumeicon &
 nitrogen --restore &
-alacritty -e tty-clock &
-# run caffeine &
+alacritty -e tty-clock -C 3 &
+caffeine &
 #run vivaldi-stable &
 #run firefox &
 #run thunar &
