@@ -442,6 +442,10 @@ super + bracket{left,right}
 super + space
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# Full screen
+super + shift + f
+    bspc node -t {fullscreen,tiled}
+
 # Move focus to other monitor
 super + BackSpace
 		bspc monitor -f next
